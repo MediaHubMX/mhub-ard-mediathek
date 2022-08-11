@@ -1,0 +1,31 @@
+{
+  "name": "mediahubmx-ard-mediathek",
+  "version": "0.0.0",
+  "main": "dist",
+  "scripts": {
+    "build": "tsc",
+    "start": "node .",
+    "develop": "ts-node-dev --transpile-only --no-notify src"
+  },
+  "dependencies": {
+    "@mediahubmx/sdk": "^1.0.3",
+    "cross-fetch": "^3.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.5",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "simple-git-hooks": "^2.7.0",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
